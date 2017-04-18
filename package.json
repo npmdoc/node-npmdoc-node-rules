@@ -1,1 +1,39 @@
-{     "devDependencies": {         "node-rules": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmdoc-node-rules",     "homepage": "https://github.com/npmdoc/node-npmdoc-node-rules",     "repository": {         "type": "git",         "url": "https://github.com/npmdoc/node-npmdoc-node-rules.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "#### api documentation for  [node-rules (v3.1.0)](https://github.com/mithunsatheesh/node-rules)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-rules.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-rules) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-rules.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-rules)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "node-rules": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmdoc/node-npmdoc-node-rules",
+    "keywords": [
+        "documentation",
+        "node-rules"
+    ],
+    "license": "MIT",
+    "main": "lib.npmdoc_node_rules.js",
+    "name": "npmdoc-node-rules",
+    "nameAlias": "npmdoc_node_rules",
+    "nameOriginal": "npmdoc-node-rules",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmdoc/node-npmdoc-node-rules.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
