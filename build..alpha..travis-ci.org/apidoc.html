@@ -1,0 +1,568 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/mithunsatheesh/node-rules"
+
+    >node-rules (v3.1.0)</a>
+</h1>
+<h4>Business Rules Engine for JavaScript</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-rules">module node-rules</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node-rules">
+            function <span class="apidocSignatureSpan"></span>node-rules
+            <span class="apidocSignatureSpan">(rules, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules">
+            function <span class="apidocSignatureSpan">node-rules.</span>node_rules
+            <span class="apidocSignatureSpan">(rules, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.toString">
+            function <span class="apidocSignatureSpan">node-rules.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-rules.</span>node_rules.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-rules.node_rules">module node-rules.node_rules</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules.node_rules">
+            function <span class="apidocSignatureSpan">node-rules.</span>node_rules
+            <span class="apidocSignatureSpan">(rules, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-rules.node_rules.prototype">module node-rules.node_rules.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules.prototype.execute">
+            function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>execute
+            <span class="apidocSignatureSpan">(fact, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules.prototype.findRules">
+            function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>findRules
+            <span class="apidocSignatureSpan">(filter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules.prototype.fromJSON">
+            function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>fromJSON
+            <span class="apidocSignatureSpan">(rules)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules.prototype.init">
+            function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>init
+            <span class="apidocSignatureSpan">(rules)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules.prototype.prioritize">
+            function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>prioritize
+            <span class="apidocSignatureSpan">(priority, filter)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules.prototype.register">
+            function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>register
+            <span class="apidocSignatureSpan">(rules)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules.prototype.sync">
+            function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>sync
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules.prototype.toJSON">
+            function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>toJSON
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-rules.node_rules.prototype.turn">
+            function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>turn
+            <span class="apidocSignatureSpan">(state, filter)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-rules" id="apidoc.module.node-rules">module node-rules</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node-rules" id="apidoc.element.node-rules.node-rules">
+        function <span class="apidocSignatureSpan"></span>node-rules
+        <span class="apidocSignatureSpan">(rules, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RuleEngine(rules, options) {
+    this.init();
+    if (typeof(rules) != &#x22;undefined&#x22;) {
+        this.register(rules);
+    }
+    if (options) {
+        this.ignoreFactChanges = options.ignoreFactChanges;
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules" id="apidoc.element.node-rules.node_rules">
+        function <span class="apidocSignatureSpan">node-rules.</span>node_rules
+        <span class="apidocSignatureSpan">(rules, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RuleEngine(rules, options) {
+    this.init();
+    if (typeof(rules) != &#x22;undefined&#x22;) {
+        this.register(rules);
+    }
+    if (options) {
+        this.ignoreFactChanges = options.ignoreFactChanges;
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.toString" id="apidoc.element.node-rules.toString">
+        function <span class="apidocSignatureSpan">node-rules.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-rules.node_rules" id="apidoc.module.node-rules.node_rules">module node-rules.node_rules</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules.node_rules" id="apidoc.element.node-rules.node_rules.node_rules">
+        function <span class="apidocSignatureSpan">node-rules.</span>node_rules
+        <span class="apidocSignatureSpan">(rules, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function RuleEngine(rules, options) {
+    this.init();
+    if (typeof(rules) != &#x22;undefined&#x22;) {
+        this.register(rules);
+    }
+    if (options) {
+        this.ignoreFactChanges = options.ignoreFactChanges;
+    }
+    return this;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-rules.node_rules.prototype" id="apidoc.module.node-rules.node_rules.prototype">module node-rules.node_rules.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules.prototype.execute" id="apidoc.element.node-rules.node_rules.prototype.execute">
+        function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>execute
+        <span class="apidocSignatureSpan">(fact, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execute = function (fact, callback) {
+    //these new attributes have to be in both last session and current session to support
+    // the compare function
+    var complete = false;
+    fact.result = true;
+    var session = _.clone(fact);
+    var lastSession = _.clone(fact);
+    var _rules = this.activeRules;
+    var matchPath = [];
+    var ignoreFactChanges = this.ignoreFactChanges;
+    (function FnRuleLoop(x) {
+        var API = {
+            &#x22;rule&#x22;: function() { return _rules[x]; },
+            &#x22;when&#x22;: function(outcome) {
+                if (outcome) {
+                    var _consequence = _rules[x].consequence;
+                    _consequence.ruleRef = _rules[x].id || _rules[x].name || &#x27;index_&#x27;+x;
+                    process.nextTick(function() {
+                        matchPath.push(_consequence.ruleRef);
+                        _consequence.call(session, API);
+                    });
+                } else {
+                    process.nextTick(function() {
+                        API.next();
+                    });
+                }
+            },
+            &#x22;restart&#x22;: function() {
+                return FnRuleLoop(0);
+            },
+            &#x22;stop&#x22;: function() {
+                complete = true;
+                return FnRuleLoop(0);
+            },
+            &#x22;next&#x22;: function() {
+                if (!ignoreFactChanges &#x26;&#x26; !_.isEqual(lastSession, session)) {
+                    lastSession = _.clone(session);
+                    process.nextTick(function() {
+                        API.restart();
+                    });
+                } else {
+                    process.nextTick(function() {
+                        return FnRuleLoop(x + 1);
+                    });
+                }
+            }
+        };
+        if (x &#x3c; _rules.length &#x26;&#x26; complete === false) {
+            var _rule = _rules[x].condition;
+            _rule.call(session, API);
+        } else {
+            process.nextTick(function() {
+                session.matchPath = matchPath;
+                return callback(session);
+            });
+        }
+    })(0);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    &#x22;cardType&#x22;:&#x22;Credit Card&#x22;,
+};
+
+//initialize the rule engine
+var R = new RuleEngine(rules);
+
+//Now pass the fact on to the rule engine for results
+R.<span class="apidocCodeKeywordSpan">execute</span>(fact,function(result){
+
+	if(result.result)
+		console.log(&#x22;Payment Accepted&#x22;);
+	else
+		console.log(&#x22;Payment Rejected&#x22;);
+	
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules.prototype.findRules" id="apidoc.element.node-rules.node_rules.prototype.findRules">
+        function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>findRules
+        <span class="apidocSignatureSpan">(filter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">findRules = function (filter) {
+    if (typeof(filter) === &#x22;undefined&#x22;) {
+        return this.rules;
+    } else {
+        var find = _.matches(filter);
+        return _.filter(this.rules, find);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules.prototype.fromJSON" id="apidoc.element.node-rules.node_rules.prototype.fromJSON">
+        function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>fromJSON
+        <span class="apidocSignatureSpan">(rules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromJSON = function (rules) {
+    this.init();
+    if (typeof(rules) == &#x22;string&#x22;) {
+        rules = JSON.parse(rules);
+    }
+    if (rules instanceof Array) {
+        rules = rules.map(function(rule) {
+            rule.condition = eval(&#x22;(&#x22; + rule.condition + &#x22;)&#x22;);
+            rule.consequence = eval(&#x22;(&#x22; + rule.consequence + &#x22;)&#x22;);
+            return rule;
+        });
+    } else if (rules !== null &#x26;&#x26; typeof(rules) == &#x22;object&#x22;) {
+        rules.condition = eval(&#x22;(&#x22; + rules.condition + &#x22;)&#x22;);
+        rules.consequence = eval(&#x22;(&#x22; + rules.consequence + &#x22;)&#x22;);
+    }
+    this.register(rules);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules.prototype.init" id="apidoc.element.node-rules.node_rules.prototype.init">
+        function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>init
+        <span class="apidocSignatureSpan">(rules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (rules) {
+    this.rules = [];
+    this.activeRules = [];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules.prototype.prioritize" id="apidoc.element.node-rules.node_rules.prototype.prioritize">
+        function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>prioritize
+        <span class="apidocSignatureSpan">(priority, filter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">prioritize = function (priority, filter) {
+    priority = parseInt(priority, 10);
+    var rules = this.findRules(filter);
+    for (var i = 0, j = rules.length; i &#x3c; j; i++) {
+        rules[i].priority = priority;
+    }
+    this.sync();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules.prototype.register" id="apidoc.element.node-rules.node_rules.prototype.register">
+        function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>register
+        <span class="apidocSignatureSpan">(rules)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">register = function (rules) {
+    if (Array.isArray(rules)) {
+        this.rules = this.rules.concat(rules);
+    } else if (rules !== null &#x26;&#x26; typeof(rules) == &#x22;object&#x22;) {
+        this.rules.push(rules);
+    }
+    this.sync();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules.prototype.sync" id="apidoc.element.node-rules.node_rules.prototype.sync">
+        function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>sync
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sync = function () {
+    this.activeRules = this.rules.filter(function(a) {
+        if (typeof(a.on) === &#x22;undefined&#x22;) {
+            a.on = true;
+        }
+        if (a.on === true) {
+            return a;
+        }
+    });
+    this.activeRules.sort(function(a, b) {
+        if (a.priority &#x26;&#x26; b.priority) {
+            return b.priority - a.priority;
+        } else {
+            return 0;
+        }
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules.prototype.toJSON" id="apidoc.element.node-rules.node_rules.prototype.toJSON">
+        function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>toJSON
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toJSON = function () {
+    var rules = this.rules;
+    if (rules instanceof Array) {
+        rules = rules.map(function(rule) {
+            rule.condition = rule.condition.toString();
+            rule.consequence = rule.consequence.toString();
+            return rule;
+        });
+    } else if (typeof(rules) != &#x22;undefined&#x22;) {
+        rules.condition = rules.condition.toString();
+        rules.consequence = rules.consequence.toString();
+    }
+    return rules;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-rules.node_rules.prototype.turn" id="apidoc.element.node-rules.node_rules.prototype.turn">
+        function <span class="apidocSignatureSpan">node-rules.node_rules.prototype.</span>turn
+        <span class="apidocSignatureSpan">(state, filter)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">turn = function (state, filter) {
+    var state = (state === &#x22;on&#x22; || state === &#x22;ON&#x22;) ? true : false;
+    var rules = this.findRules(filter);
+    for (var i = 0, j = rules.length; i &#x3c; j; i++) {
+        rules[i].on = state;
+    }
+    this.sync();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
