@@ -74,15 +74,6 @@
 
         <li>
 
-            <a class="apidocElementLiA" href="#apidoc.element.node-rules.toString">
-            function <span class="apidocSignatureSpan">node-rules.</span>toString
-            <span class="apidocSignatureSpan">()</span>
-            </a>
-
-        </li>
-
-        <li>
-
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-rules.</span>node_rules.prototype</span>
 
         </li>
@@ -237,21 +228,6 @@
 
 
 
-    <h2>
-        <a href="#apidoc.element.node-rules.toString" id="apidoc.element.node-rules.toString">
-        function <span class="apidocSignatureSpan">node-rules.</span>toString
-        <span class="apidocSignatureSpan">()</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">toString = function () {
-    return text;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
 
 </div>
 
@@ -387,7 +363,23 @@ R.<span class="apidocCodeKeywordSpan">execute</span>(fact,function(result){
         return _.filter(this.rules, find);
     }
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    } else {
+        var find = _.matches(filter);
+        return _.filter(this.rules, find);
+    }
+}
+RuleEngine.prototype.turn = function(state, filter) {
+    var state = (state === "on" || state === "ON") ? true : false;
+    var rules = this.<span class="apidocCodeKeywordSpan">findRules</span>(filter);
+    for (var i = 0, j = rules.length; i &lt; j; i++) {
+        rules[i].on = state;
+    }
+    this.sync();
+}
+RuleEngine.prototype.prioritize = function(priority, filter) {
+    priority = parseInt(priority, 10);
+...</pre></li>
     </ul>
 
 
@@ -416,7 +408,23 @@ R.<span class="apidocCodeKeywordSpan">execute</span>(fact,function(result){
     }
     this.register(rules);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    },
+    "on": true
+}];
+it("rules after toJSON and fromJSON back should be equivalent to the old form", function() {
+    var R1 = new RuleEngine(rules);
+    var store = R1.toJSON();
+    var R2 = new RuleEngine();
+    R2.<span class="apidocCodeKeywordSpan">fromJSON</span>(store);
+    expect(R1.rules).to.eql(R2.rules);
+});
+it("rules serilisation &amp; back working fine?", function() {
+    var R = new RuleEngine(rules);
+    var store = R.toJSON();
+    R.fromJSON(store);
+    expect(rules).to.eql(R.rules);
+...</pre></li>
     </ul>
 
 
@@ -432,7 +440,23 @@ R.<span class="apidocCodeKeywordSpan">execute</span>(fact,function(result){
     this.rules = [];
     this.activeRules = [];
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+(function() {
+'use strict';
+var _ = require('underscore');
+exports.version = '3.0.0';
+
+function RuleEngine(rules, options) {
+    this.<span class="apidocCodeKeywordSpan">init</span>();
+    if (typeof(rules) != "undefined") {
+        this.register(rules);
+    }
+    if (options) {
+        this.ignoreFactChanges = options.ignoreFactChanges;
+    }
+    return this;
+...</pre></li>
     </ul>
 
 
@@ -452,7 +476,23 @@ R.<span class="apidocCodeKeywordSpan">execute</span>(fact,function(result){
     }
     this.sync();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            "id": "two"
+        });
+        expect(R.findRules({
+            "id": "two"
+        })[0].on).to.eql(true);
+    });
+});
+describe(".<span class="apidocCodeKeywordSpan">prioritize</span>()", function() {
+    var rules = [{
+        "condition": function(R) {
+            R.when(1);
+        },
+        "consequence": function(R) {
+            R.stop();
+        },
+...</pre></li>
     </ul>
 
 
@@ -472,7 +512,23 @@ R.<span class="apidocCodeKeywordSpan">execute</span>(fact,function(result){
     }
     this.sync();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        this.result = false;
+        this.reason = "The transaction was blocked as it was less than 500";
+        R.stop();
+    }
+};
+/* Creating Rule Engine instance and registering rule */
+var R = new RuleEngine();
+R.<span class="apidocCodeKeywordSpan">register</span>(rule);
+/* Fact with less than 500 as transaction, and this should be blocked */
+var fact = {
+    "name": "user4",
+    "application": "MOB2",
+    "transactionTotal": 400,
+    "cardType": "Credit Card"
+};
+...</pre></li>
     </ul>
 
 
@@ -501,7 +557,23 @@ R.<span class="apidocCodeKeywordSpan">execute</span>(fact,function(result){
         }
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+};
+RuleEngine.prototype.register = function(rules) {
+    if (Array.isArray(rules)) {
+        this.rules = this.rules.concat(rules);
+    } else if (rules !== null &amp;&amp; typeof(rules) == "object") {
+        this.rules.push(rules);
+    }
+    this.<span class="apidocCodeKeywordSpan">sync</span>();
+};
+RuleEngine.prototype.sync = function() {
+    this.activeRules = this.rules.filter(function(a) {
+        if (typeof(a.on) === "undefined") {
+            a.on = true;
+        }
+        if (a.on === true) {
+...</pre></li>
     </ul>
 
 
@@ -527,7 +599,23 @@ R.<span class="apidocCodeKeywordSpan">execute</span>(fact,function(result){
     }
     return rules;
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    it("checking whether rules reorder after prioritize", function() {
+        R.prioritize(10, {
+            "id": "one"
+        });
+        expect(R.activeRules[0].id).to.eql("one");
+    });
+});
+describe(".<span class="apidocCodeKeywordSpan">toJSON</span>() &amp; .fromJSON", function() {
+    var rules = [{
+        "condition": function(R) {
+            R.when(1);
+        },
+        "consequence": function(R) {
+            R.stop();
+        },
+...</pre></li>
     </ul>
 
 
@@ -547,7 +635,23 @@ R.<span class="apidocCodeKeywordSpan">execute</span>(fact,function(result){
     }
     this.sync();
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            "id": "one"
+        })[0].id).to.eql("one");
+    });
+    it("find without condition works fine", function() {
+        expect(R.findRules().length).to.eql(2);
+    });
+});
+describe(".<span class="apidocCodeKeywordSpan">turn</span>()", function() {
+    var rules = [{
+        "condition": function(R) {
+            R.when(1);
+        },
+        "consequence": function(R) {
+            R.stop();
+        },
+...</pre></li>
     </ul>
 
 
