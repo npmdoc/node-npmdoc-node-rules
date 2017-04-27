@@ -1,6 +1,6 @@
 # npmdoc-node-rules
 
-#### api documentation for  [node-rules (v3.1.0)](https://github.com/mithunsatheesh/node-rules)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-rules.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-rules) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-rules.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-rules)
+#### basic api documentation for  [node-rules (v3.1.0)](https://github.com/mithunsatheesh/node-rules)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-rules.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-rules) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-rules.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-rules)
 
 #### Business Rules Engine for JavaScript
 
@@ -77,7 +77,8 @@
     "scripts": {
         "test": "./node_modules/mocha/bin/mocha"
     },
-    "version": "3.1.0"
+    "version": "3.1.0",
+    "bin": {}
 }
 ```
 
